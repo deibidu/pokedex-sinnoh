@@ -1,0 +1,19 @@
+@import "../style.css";
+
+.buttonListBlockContainer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 20px;
+}
+.buttonListBlock {
+  border: solid 3px var(--color-dark-orange);
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: var(--color-light-yellow);
+  cursor: pointer;
+}
+
+.buttonListBlock:hover {
+  background-color: var(--color-orange);
+}

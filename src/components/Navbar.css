@@ -1,0 +1,166 @@
+@import "../style.css";
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-blue-navbar);
+  padding: 30px 20px;
+  border-bottom: solid 3px var(--color-dark-blue-gray-border);
+}
+
+.pokedex-name {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(114, 220, 184);
+  align-items: center;
+  border-radius: 50px;
+  border: solid 3px var(--color-dark-blue-gray-border);
+  padding: 0 24px;
+  gap: 10px;
+  color: var(--color-white);
+  font-size: large;
+  font-weight: 600;
+  -webkit-text-stroke: 3px var(--color-dark-blue-gray-border);
+  paint-order: stroke fill;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.toggleButton-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 3px var(--color-dark-blue-gray-border);
+  border-radius: 50px;
+}
+
+.cherrim-icon {
+  width: 40px;
+}
+
+/* buttons */
+
+.button-navbar {
+  border-radius: 30px;
+  color: var(--color-white);
+  background-color: var(--color-dark-blue);
+  cursor: pointer;
+  padding: 12px 24px;
+  border: solid 3px var(--color-dark-blue-gray-border);
+}
+
+.button-navbar:hover {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+}
+
+.button-navbar--active {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+}
+
+/* breakpoints */
+
+@media (max-width: 920px) {
+  .button-navbar {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .pokedex-name {
+    padding: 0 20px;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  .button-navbar {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  .pokedex-name {
+    padding: 0 16px;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 620px) {
+  .button-navbar {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+  .pokedex-name {
+    padding: 0 14px;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+  .cherrim-icon {
+    width: 30px;
+  }
+  .nav-buttons {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 540px) {
+  .pokedex-name {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .cherrim-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .pokedex-name {
+    padding: 0 12px;
+  }
+  .pokedex-name :nth-child(3) {
+    display: none;
+  }
+  .navbar {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    padding: 28px 16px;
+  }
+}

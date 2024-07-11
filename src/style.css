@@ -1,0 +1,82 @@
+:root {
+  /* fonts */
+
+  font-family: "Jost", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+
+  /* colors */
+  --color-black: #4a4634;
+  --color-white: #f2f5f4;
+  --color-blue-navbar: #5c81f4;
+  --color-blue-dark-mode-section: #72a6f2;
+  --color-dark-blue: #1b2c78;
+  --color-dark-blue-gray-border: #34576d;
+  --color-orange: #f49644;
+  --color-dark-orange: #d57826;
+  --color-light-yellow: #feeab7;
+  --color-red: #ec411b;
+}
+
+/* Tema diurno */
+.light-theme {
+  --background-color: rgb(99, 136, 213);
+  --background-image: linear-gradient(
+    0deg,
+    rgba(99, 136, 213, 1) 0%,
+    rgba(34, 72, 147, 1) 50%,
+    rgba(99, 136, 213, 1) 100%
+  );
+}
+
+/* Tema nocturno */
+.dark-theme {
+  --background-color: rgb(110, 121, 145);
+  --background-image: linear-gradient(
+    0deg,
+    rgba(110, 121, 145, 1) 0%,
+    rgba(48, 55, 69, 1) 50%,
+    rgba(110, 121, 145, 1) 100%
+  );
+}
+
+body {
+  display: block;
+  margin: 0;
+  background-size: cover;
+  height: 100vh;
+}
+
+body.light-theme {
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+}
+
+body.dark-theme {
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+}
+
+/* links */
+
+a {
+  text-decoration: inherit;
+}
+a:active {
+  background-color: var(--color-orange);
+}
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 10px; /* ancho del scroll */
+  height: 10px; /* alto del scroll */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-red); /* color de la parte móvil */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark-blue); /* color de la pista */
+}
