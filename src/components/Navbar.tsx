@@ -28,22 +28,24 @@ const Navbar = ({
 
         <div className="navbar">
           <div className="nav-buttons">
-            <button
-              className="button-navbar"
+            <NavLink
+              to="/Home"
+              className={({ isActive }) =>
+                `button-navbar ${isActive ? "button-navbar--active" : ""}`
+              }
               onClick={handleFullPokedex}
-              type="submit"
             >
-              <NavLink to="/Home" />
               Pokédex
-            </button>
-            <button
+            </NavLink>
+            <NavLink
+              to="/Favoritos"
+              className={({ isActive }) =>
+                `button-navbar ${isActive ? "button-navbar--active" : ""}`
+              }
               onClick={handleFavoritosFilter}
-              className="button-navbar"
-              type="submit"
             >
-              <NavLink to="/Favoritos" />
               Favoritos
-            </button>
+            </NavLink>
           </div>
 
           <div className="toggleButton-section">

@@ -65,6 +65,7 @@
   cursor: pointer;
   padding: 12px 24px;
   border: solid 3px var(--color-dark-blue-gray-border);
+  font-weight: 500;
 }
 
 .button-navbar:hover {

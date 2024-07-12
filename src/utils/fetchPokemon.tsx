@@ -32,6 +32,7 @@ export const PokemonList = () => {
           { length: 493 - 387 + 1 },
           (_, index) => 387 + index
         );
+        // funcion para sacar los datos de los pokemon
         const promises = sinnohPokemonIds.map((id) =>
           axios.get(`${BASE_URL}/${id}`)
         );
@@ -104,21 +105,37 @@ export const PokemonList = () => {
                 key={pokemonItem.id}
               >
                 <img
-                  className="pkmnImage"
+                  className={
+                    mode === "list" ? "pkmnImage" : "pkmnImageBlock-mode"
+                  }
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonItem.id}.png`}
                   alt={pokemonItem.name}
                 />
                 <div className="pkmnitem">
                   <p>{pokemonItem.name.toUpperCase()}</p>
                   <div className="pkmnitem">
-                    <p>Nº {pokemonItem.id}</p>
+                    <p> Nº {pokemonItem.id}</p>
                   </div>
                 </div>
 
                 <div className="flexStats">
-                  <div className="pkmnStats">
-                    <p className="pkmnStat">Ataque: </p>{" "}
-                    <p className="pkmnResults">
+                  <div
+                    className={
+                      mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                    }
+                  >
+                    <p
+                      className={
+                        mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                      }
+                    >
+                      Ataque:{" "}
+                    </p>{" "}
+                    <p
+                      className={
+                        mode === "list" ? "pkmnResultsList-mode" : "pkmnResults"
+                      }
+                    >
                       {
                         pokemonItem.stats.find(
                           (stat) => stat.stat.name === "attack"
@@ -127,9 +144,23 @@ export const PokemonList = () => {
                     </p>
                   </div>
 
-                  <div className="pkmnStats">
-                    <p className="pkmnStat">Defensa: </p>{" "}
-                    <p className="pkmnResults">
+                  <div
+                    className={
+                      mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                    }
+                  >
+                    <p
+                      className={
+                        mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                      }
+                    >
+                      Defensa:{" "}
+                    </p>{" "}
+                    <p
+                      className={
+                        mode === "list" ? "pkmnResultsList-mode" : "pkmnResults"
+                      }
+                    >
                       {
                         pokemonItem.stats.find(
                           (stat) => stat.stat.name === "defense"
@@ -139,9 +170,23 @@ export const PokemonList = () => {
                   </div>
                 </div>
                 <div className="flexStats">
-                  <div className="pkmnStats">
-                    <p className="pkmnStat">Ataque Esp.: </p>{" "}
-                    <p className="pkmnResults">
+                  <div
+                    className={
+                      mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                    }
+                  >
+                    <p
+                      className={
+                        mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                      }
+                    >
+                      Ataque Esp:{" "}
+                    </p>{" "}
+                    <p
+                      className={
+                        mode === "list" ? "pkmnResultsList-mode" : "pkmnResults"
+                      }
+                    >
                       {
                         pokemonItem.stats.find(
                           (stat) => stat.stat.name === "special-attack"
@@ -150,9 +195,23 @@ export const PokemonList = () => {
                     </p>
                   </div>
 
-                  <div className="pkmnStats">
-                    <p className="pkmnStat">Defensa Esp.: </p>{" "}
-                    <p className="pkmnResults">
+                  <div
+                    className={
+                      mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                    }
+                  >
+                    <p
+                      className={
+                        mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                      }
+                    >
+                      Defensa Esp:{" "}
+                    </p>{" "}
+                    <p
+                      className={
+                        mode === "list" ? "pkmnResultsList-mode" : "pkmnResults"
+                      }
+                    >
                       {
                         pokemonItem.stats.find(
                           (stat) => stat.stat.name === "special-defense"

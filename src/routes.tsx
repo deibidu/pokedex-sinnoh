@@ -10,7 +10,7 @@ export const routes = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true,
+        path: "/Home",
         element: <Home />,
         Component: PokemonList,
       },
