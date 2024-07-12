@@ -32,6 +32,7 @@ export const PokemonList = () => {
           { length: 493 - 387 + 1 },
           (_, index) => 387 + index
         );
+        // funcion para sacar los datos de los pokemon
         const promises = sinnohPokemonIds.map((id) =>
           axios.get(`${BASE_URL}/${id}`)
         );
@@ -113,7 +114,7 @@ export const PokemonList = () => {
                 <div className="pkmnitem">
                   <p>{pokemonItem.name.toUpperCase()}</p>
                   <div className="pkmnitem">
-                    <p>Nº {pokemonItem.id}</p>
+                    <p> Nº {pokemonItem.id}</p>
                   </div>
                 </div>
 
