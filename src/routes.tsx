@@ -15,7 +15,7 @@ export const routes = createBrowserRouter([
         Component: PokemonList,
       },
       {
-        path: "/Favoritos",
+        path: "Favoritos",
         element: <Favoritos />,
         Component: PokemonList,
       },
