@@ -1,32 +1,41 @@
-// import { useEffect, useState } from "react";
-// import { useNavigate, useSearchParams } from "react-router-dom";
+import "./Pagination.css";
 
-// export const Pagination = () => {
-//   const [searchParams] = useSearchParams();
-//   const navigate = useNavigate();
+interface Props {
+  perPage: number;
+  page: number;
+  nextPage: () => void;
+  prevPage: () => void;
+  maxItems: number;
+}
 
-//   const [page, changePage] = useState<number>(1);
+export const Pagination = ({
+  perPage,
+  page,
+  nextPage,
+  prevPage,
+  maxItems,
+}: Props) => {
+  const lastPage = Math.ceil(maxItems / perPage);
 
-//   const nextPage = () => {
-//     changePage(page + 1);
-//     navigate(`/?page-${page + 1}`);
-//     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-//   };
-
-//   const prevPage = () => {
-//     changePage(page - 1);
-//     navigate(`/?page-${page - 1}`);
-//     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-//   };
-
-//   const backToHome = () => {
-//     changePage(1);
-//     navigate("/");
-//   };
-
-//   useEffect(() => {
-//     changePage(parseInt(searchParams.get("page")!) || 1);
-//   }, [searchParams]);
-
-//   return { page, nextPage, prevPage, changePage, backToHome };
-// };
+  return (
+    <>
+      <div className="pagination">
+        <button
+          className="paginationButton"
+          disabled={page === 1}
+          onClick={prevPage}
+        >
+          &lt;
+        </button>
+        <span>{page}</span>
+        <button
+          className="paginationButton"
+          disabled={page === lastPage}
+          onClick={nextPage}
+        >
+          &gt;
+        </button>
+      </div>
+    </>
+  );
+};

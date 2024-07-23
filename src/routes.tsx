@@ -1,8 +1,7 @@
 import App from "./App";
-import { Home } from "./pages/Home";
-import Favoritos from "./pages/Favoritos";
+
 import PokemonList from "./utils/fetchPokemon";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export const routes = createBrowserRouter([
   {
@@ -10,14 +9,16 @@ export const routes = createBrowserRouter([
     element: <App />,
     children: [
       {
+        index: true,
+        element: <Navigate to="/Home" replace />,
+      },
+      {
         path: "/Home",
-        element: <Home />,
-        Component: PokemonList,
+        element: <PokemonList />,
       },
       {
         path: "/Favoritos",
-        element: <Favoritos />,
-        Component: PokemonList,
+        element: <PokemonList favoritos={true} />,
       },
     ],
   },

@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import { ToggleButton } from "./ToggleButton";
+import { usePagination } from "./usePagination";
 
 const Navbar = ({
   handleFavoritosFilter,
@@ -9,10 +10,16 @@ const Navbar = ({
   handleFavoritosFilter: () => void;
   handleFullPokedex: () => void;
 }) => {
+  const { backToHome } = usePagination();
+
   return (
     <>
       <nav className="nav">
-        <div className="pokedex-name">
+        <div
+          className="pokedex-name"
+          style={{ cursor: "pointer" }}
+          onClick={backToHome}
+        >
           <img
             className={"icon"}
             src={"/pokeball-blue.png"}
