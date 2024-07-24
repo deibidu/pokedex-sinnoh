@@ -13,13 +13,23 @@
 
 .paginationButton {
   border: solid 3px var(--color-dark-orange);
-  border-radius: 4px;
+  border-radius: 6px;
   background: var(--color-light-yellow);
   padding: 8px 12px;
-  color: var(--color-dark-blue);
+  color: var(--color-black);
   font-size: large;
   font-weight: 700;
   cursor: pointer;
+}
+
+body.dark-theme .paginationButton {
+  border: solid 3px var(--color-light-yellow);
+  background-color: var(--background-color-dark-mode-navAndCard);
+  color: var(--color-light-yellow);
+}
+
+body.dark-theme .paginationButton:hover {
+  background-color: var(--color-dark-orange);
 }
 
 .paginationButton:hover {

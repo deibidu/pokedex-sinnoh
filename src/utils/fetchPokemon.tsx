@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../utils/models/fetchPokemon.css";
+import "../style.css";
 import * as PokemonInfoApi from "./models/index";
 import { ToggleButtonBlockList } from "../components/ToggleButtonBlockList";
 import { FaHeart } from "react-icons/fa6";
 import Navbar from "../components/Navbar";
 import { Pagination } from "../components/Pagination";
 import { usePagination } from "../components/usePagination";
-// import { getItem } from "./models/useLocalStorage";
 
 // Raíz base de la llamada a la API
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
@@ -125,11 +125,21 @@ export const PokemonList = ({ favoritos = false }) => {
               //
               .map((pokemonItem) => (
                 <div
-                  className={
+                  className={`${
                     mode === "list" ? "cardItemList-mode" : "cardItemBlock-mode"
-                  }
+                  } ${
+                    document.body.classList.contains("dark-theme")
+                      ? "dark-theme"
+                      : ""
+                  }`}
                   key={pokemonItem.id}
                 >
+                  <img
+                    className={
+                      mode === "list" ? "pkball-icon" : "pkball-icon-off"
+                    }
+                    src={"/pokeball-icon.svg"}
+                  ></img>
                   <img
                     className={
                       mode === "list" ? "pkmnImage" : "pkmnImageBlock-mode"
@@ -137,21 +147,47 @@ export const PokemonList = ({ favoritos = false }) => {
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonItem.id}.png`}
                     alt={pokemonItem.name}
                   />
-                  <div className="pkmnitem">
-                    <p>{pokemonItem.name.toUpperCase()}</p>
-                    <div className="pkmnitem">
-                      <p>Nº {pokemonItem.id}</p>
-                    </div>
+                  <div
+                    className={
+                      mode === "list" ? "pkmnitem" : "pkmnitemBlock-mode"
+                    }
+                  >
+                    <p
+                      className={`${"pkmnNumber"} ${
+                        document.body.classList.contains("dark-theme")
+                          ? "dark-theme"
+                          : ""
+                      }`}
+                    >
+                      Nº {pokemonItem.id}
+                    </p>
+                    <p
+                      className={`${"pkmnName"} ${
+                        document.body.classList.contains("dark-theme")
+                          ? "dark-theme"
+                          : ""
+                      }`}
+                    >
+                      {pokemonItem.name}
+                    </p>
                   </div>
-                  <div className="flexStats">
+                  <div
+                    className={
+                      mode === "list" ? "flexStats" : "flexStats-block"
+                    }
+                  >
                     <div
                       className={
-                        mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                        mode === "list"
+                          ? "pkmnStatsList-mode"
+                          : "pkmnStatsBlock-mode"
                       }
                     >
                       <p
                         className={
-                          mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                          mode === "list"
+                            ? "pkmnStatList-mode"
+                            : "pkmnStatBlock-mode"
                         }
                       >
                         Ataque:{" "}
@@ -160,7 +196,7 @@ export const PokemonList = ({ favoritos = false }) => {
                         className={
                           mode === "list"
                             ? "pkmnResultsList-mode"
-                            : "pkmnResults"
+                            : "pkmnResultsBlock-mode"
                         }
                       >
                         {
@@ -172,12 +208,16 @@ export const PokemonList = ({ favoritos = false }) => {
                     </div>
                     <div
                       className={
-                        mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                        mode === "list"
+                          ? "pkmnStatsList-mode"
+                          : "pkmnStatsBlock-mode"
                       }
                     >
                       <p
                         className={
-                          mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                          mode === "list"
+                            ? "pkmnStatList-mode"
+                            : "pkmnStatBlock-mode"
                         }
                       >
                         Defensa:{" "}
@@ -186,7 +226,7 @@ export const PokemonList = ({ favoritos = false }) => {
                         className={
                           mode === "list"
                             ? "pkmnResultsList-mode"
-                            : "pkmnResults"
+                            : "pkmnResultsBlock-mode"
                         }
                       >
                         {
@@ -196,16 +236,19 @@ export const PokemonList = ({ favoritos = false }) => {
                         }
                       </p>
                     </div>
-                  </div>
-                  <div className="flexStats">
+
                     <div
                       className={
-                        mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                        mode === "list"
+                          ? "pkmnStatsList-mode"
+                          : "pkmnStatsBlock-mode"
                       }
                     >
                       <p
                         className={
-                          mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                          mode === "list"
+                            ? "pkmnStatList-mode"
+                            : "pkmnStatBlock-mode"
                         }
                       >
                         Ataque Esp:{" "}
@@ -214,7 +257,7 @@ export const PokemonList = ({ favoritos = false }) => {
                         className={
                           mode === "list"
                             ? "pkmnResultsList-mode"
-                            : "pkmnResults"
+                            : "pkmnResultsBlock-mode"
                         }
                       >
                         {
@@ -226,12 +269,16 @@ export const PokemonList = ({ favoritos = false }) => {
                     </div>
                     <div
                       className={
-                        mode === "list" ? "pkmnStatsList-mode" : "pkmnStats"
+                        mode === "list"
+                          ? "pkmnStatsList-mode"
+                          : "pkmnStatsBlock-mode"
                       }
                     >
                       <p
                         className={
-                          mode === "list" ? "pkmnStatList-mode" : "pkmnStat"
+                          mode === "list"
+                            ? "pkmnStatList-mode"
+                            : "pkmnStatBlock-mode"
                         }
                       >
                         Defensa Esp:{" "}
@@ -240,7 +287,7 @@ export const PokemonList = ({ favoritos = false }) => {
                         className={
                           mode === "list"
                             ? "pkmnResultsList-mode"
-                            : "pkmnResults"
+                            : "pkmnResultsBlock-mode"
                         }
                       >
                         {

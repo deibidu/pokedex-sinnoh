@@ -1,18 +1,50 @@
 @import "../../style.css";
 
-.pkmnImage {
-  width: 72px;
+/* Modo nocturno */
+body.dark-theme .cardItemList-mode,
+body.dark-theme .cardItemBlock-mode {
+  background-color: var(--background-color-dark-mode-navAndCard);
+  border-color: var(--color-light-yellow);
 }
-.pkmnImageBlock-mode {
-  width: 72px;
+
+body.dark-theme .cardItemList-mode:hover,
+body.dark-theme .cardItemBlock-mode:hover {
+  background-color: var(--color-dark-orange);
+}
+
+body.dark-theme .pkmnNumber,
+body.dark-theme .pkmnName {
+  color: var(--color-white);
+}
+
+.pkmnImage {
+  height: 90px;
+  width: 90px;
+}
+
+.pkball-icon-off {
+  display: none;
 }
 
 .pkmnitem {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   font-weight: 500;
-  gap: 10px;
+  gap: 64px;
+  width: 240px;
+}
+
+.pkmnNumber {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.pkmnName {
+  text-transform: capitalize;
+  font-size: 20px;
+  color: var(--color-black);
 }
 
 .pkmnStats {
@@ -44,10 +76,16 @@
   padding: 20px;
 }
 
+.iconFav i {
+  font-size: 32px;
+}
+
 .flexStats {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: auto auto;
+  justify-items: start;
+  gap: 10px;
 }
 
 /* formato de lista y bloqque */
@@ -57,6 +95,7 @@
   grid-template-columns: auto;
   padding: 24px 0 24px 24px;
   gap: 24px;
+  overflow-x: hidden;
 }
 
 .cardItemList-mode {
@@ -64,13 +103,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
+  padding: 24px 32px;
   background-color: var(--color-light-yellow);
   border: solid 3px var(--color-dark-orange);
   border-right: 0;
   border-radius: 100px 0 0 100px;
-  margin: 30px 0 30px 30px;
-  transition: transform 0.4s;
+  transition: all 0.4s;
 }
 
 .cardItemList-mode:hover {
@@ -108,29 +146,97 @@
 .wrapBlock-mode {
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: auto auto auto auto;
-  padding: 24px;
+  grid-template-columns: auto auto auto;
+  padding: 0 24px 24px 24px;
   gap: 24px;
+  overflow-x: hidden;
 }
+
 .cardItemBlock-mode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  padding: 40px 24px;
   gap: 10px;
   background-color: var(--color-light-yellow);
   border: solid 3px var(--color-dark-orange);
   border-radius: 12px;
-  transition: transform 0.4s;
+  transition: all 0.4s;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.cardItemLBlock-mode:hover {
-  clip-path: inset(calc((1 - 1 / var(--f)) * 50%));
-  scale: var(--f);
+.cardItemBlock-mode:hover {
   background-color: var(--color-orange);
   border: solid 3px var(--color-light-yellow);
   transform: scale(1.01);
+}
+
+.pkmnImageBlock-mode {
+  height: 140px;
+  object-fit: contain;
+  width: 100%;
+  background-color: var(--color-white);
+  border: solid 2px var(--color-black);
+  padding: 20px 0 20px 0;
+  border-radius: 6px;
+}
+.pkmnitemBlock-mode {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* para cambiar el orden del numero id y el nombre del pokemon */
+
+.pkmnitemBlock-mode p:nth-child(1) {
+  order: 2;
+}
+/* */
+
+.pkmnStatBlock-mode {
+  background-color: var(--color-blue-dark-mode-section);
+  gap: 12px;
+  color: var(--color-white);
+  padding: 0 24px;
+  border-radius: 4px 4px 0 0;
+  border: 0;
+}
+
+.pkmnResultsBlock-mode {
+  background-color: var(--color-white);
+  color: var(--color-blue-dark-mode-section);
+  padding: 0px 24px;
+  border-radius: 0 4px 4px 0;
+  padding: 0px 24px;
+  border: 0;
+}
+
+.pkmnStatsBlock-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  border: solid 1px var(--color-blue-dark-mode-section);
+  border-radius: 6px;
+}
+
+.flexStats-block {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: auto auto;
+  justify-items: start;
+  gap: 10px;
+}
+
+.pkmnStatsBlock-mode p {
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
 /* efectos */
@@ -206,18 +312,22 @@
     padding: 0px 24px;
     font-size: 14px;
   }
-
-  .pkmnitem {
-    font-size: 15px;
-    gap: 10px;
-  }
 }
 
 /* list mode */
 
-@media (max-width: 820px) {
+@media (max-width: 989px) {
   .pkmnImage {
     width: 64px;
+    height: 64px;
+  }
+
+  .pkmnNumber {
+    font-size: 18px;
+  }
+
+  .pkmnName {
+    font-size: 18px;
   }
 
   .pkmnStatList-mode {
@@ -227,17 +337,6 @@
   }
 
   .pkmnResultsList-mode {
-    padding: 0px 20px;
-    font-size: 14px;
-  }
-
-  .pkmnStat {
-    gap: 8px;
-    padding: 0 20px;
-    font-size: 14px;
-  }
-
-  .pkmnResults {
     padding: 0px 20px;
     font-size: 14px;
   }
@@ -250,9 +349,17 @@
   .iconFav {
     padding: 18px;
   }
+
+  .iconFav i {
+    font-size: 24px;
+  }
+
+  .pkball-icon {
+    width: 38px;
+  }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 855px) {
   .pkmnStatList-mode {
     font-size: 12px;
   }
@@ -264,8 +371,8 @@
     font-size: 16px;
   }
 
-  .pkmnStat {
-    font-size: 12px;
+  .pkmnStatsList-mode p {
+    margin: 0;
   }
 
   .pkmnResults {
@@ -275,9 +382,9 @@
   .iconFav {
     padding: 16px;
   }
-}
-
-@media (max-width: 678px) {
+  .flexStats {
+    gap: 6px;
+  }
   .pkmnStatList-mode {
     font-size: 10px;
   }
@@ -287,7 +394,6 @@
   }
 
   .pkmnStat {
-    font-size: 10px;
     padding: 0 18px;
   }
 
@@ -295,94 +401,176 @@
     font-size: 10px;
     padding: 0 18px;
   }
+}
+
+@media (max-width: 795px) {
+  .flexStats {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .pkmnStat {
+    font-size: 10px;
+    padding: 0 14px;
+  }
+
+  .pkmnResults {
+    font-size: 10px;
+    padding: 0 14px;
+  }
+
   .iconFav {
     padding: 14px;
   }
-}
 
-@media (max-width: 620px) {
-  .pkmnStat {
-    font-size: 10px;
-    padding: 0 14px;
+  .iconFav i {
+    font-size: 16px;
   }
 
-  .pkmnResults {
-    font-size: 10px;
-    padding: 0 14px;
-  }
-  .pkmnStatsList-mode p {
-    margin: 0;
-  }
-  .pkmnStatsList-mode {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
-    justify-content: center;
-    padding: 2px;
-  }
-  .pkmnStatList-mode {
-    font-size: 10px;
-    padding: 2px 2px;
-    width: 100%;
-    border-radius: 4px 4px 0 0;
+  .pkball-icon {
+    width: 24px;
   }
 
-  .pkmnResultsList-mode {
-    font-size: 10px;
-    width: 100%;
-    padding: 2px 2px;
-    border-radius: 0 0 4px 4px;
+  .pkmnImage {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pkmnNumber {
+    font-size: 16px;
+  }
+
+  .pkmnName {
+    font-size: 16px;
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 598px) {
   .pkmnitem {
-    font-size: 12px;
-    gap: 6px;
+    width: 150px;
+  }
+  .pkmnNumber {
+    font-size: 14px;
   }
 
-  .iconFav {
-    padding: 10px;
+  .pkmnName {
+    font-size: 14px;
+  }
+  .pkmnStat {
+    gap: 2px;
+    padding: 0 7px;
   }
 }
 @media (max-width: 530px) {
+  .cardItemList-mode {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    border-right: 0;
+    border-radius: 24px 0 0 24px;
+  }
+  .pkmnStatsList-mode {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+    border: solid 1px var(--color-blue-dark-mode-section);
+    border-radius: 6px;
+  }
+
+  .pkmnStatsList-mode p {
+    width: 100%;
+    text-align: center;
+  }
+  .flexStats {
+    margin-top: 12px;
+    width: 100%;
+    order: 5;
+    gap: 6px;
+    grid-template-columns: auto auto;
+  }
+  .pkmnStatList-mode {
+    padding: 0 24px;
+    border-radius: 4px 4px 0 0;
+    border: 0;
+  }
+
+  .pkmnResultsList-mode {
+    padding: 0px 24px;
+    border-radius: 0 0 4px 4px;
+    border: 0;
+  }
+
   .pkmnitem {
     font-size: 10px;
     gap: 0px;
   }
-  .pkmnImage {
-    width: 30px;
-  }
   .iconFav {
-    padding: 5px;
+    padding: 12px;
+  }
+
+  .iconFav i {
+    font-size: 18px;
+  }
+
+  .pkmnitem {
+    width: 150px;
+    gap: 10px;
+  }
+
+  .pkmnImage {
+    width: 36px;
+    height: 36px;
   }
 }
 
 /* block mode */
-
-@media (max-width: 1310px) {
-  .wrapBlock-mode {
-    grid-template-columns: auto auto auto;
+@media (max-width: 1024px) {
+  .pkmnImageBlock-mode {
+    height: 100px;
   }
 }
 
-@media (max-width: 995px) {
-  .wrapBlock-mode {
-    grid-template-columns: auto auto;
-  }
-  .cardItemBlock-mode {
-    padding: 16px;
+@media (max-width: 970px) {
+  .pkmnStatBlock-mode {
     gap: 8px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  .pkmnResultsBlock-mode {
+    padding: 0px 20px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
+  .pkmnImageBlock-mode {
+    height: 90px;
+  }
+  .pkmnStatBlock-mode {
+    gap: 6px;
+    padding: 0 18px;
+    font-size: 12px;
+  }
+
   .wrapBlock-mode {
     grid-template-columns: auto auto;
   }
+
+  .pkmnResultsBlock-mode {
+    padding: 0px 18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
   .cardItemBlock-mode {
-    padding: 8px;
+    padding: 40px 24px;
     gap: 4px;
   }
 }
@@ -390,9 +578,11 @@
 @media (max-width: 630px) {
   .wrapBlock-mode {
     grid-template-columns: auto;
+    justify-content: center;
   }
   .cardItemBlock-mode {
-    padding: 4px;
+    width: 80%;
+    padding: 40px 24px;
     gap: 2px;
   }
 }

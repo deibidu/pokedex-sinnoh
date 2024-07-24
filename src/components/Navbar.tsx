@@ -1,7 +1,9 @@
 import "./Navbar.css";
+import "../style.css";
 import { NavLink } from "react-router-dom";
 import { ToggleButton } from "./ToggleButton";
 import { usePagination } from "./usePagination";
+import { useState } from "react";
 
 const Navbar = ({
   handleFavoritosFilter,
@@ -11,12 +13,18 @@ const Navbar = ({
   handleFullPokedex: () => void;
 }) => {
   const { backToHome } = usePagination();
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <nav className="nav">
+      <nav
+        className={`${"nav"} ${
+          document.body.classList.contains("dark-theme") ? "dark-theme" : ""
+        }`}
+      >
         <div
-          className="pokedex-name"
+          className={`${"pokedex-name"} ${
+            document.body.classList.contains("dark-theme") ? "dark-theme" : ""
+          }`}
           style={{ cursor: "pointer" }}
           onClick={backToHome}
         >
@@ -33,12 +41,18 @@ const Navbar = ({
           />
         </div>
 
-        <div className="navbar">
+        <div className={`navbar ${isOpen ? "open" : ""}`}>
           <div className="nav-buttons">
             <NavLink
               to="/Home"
               className={({ isActive }) =>
-                `button-navbar ${isActive ? "button-navbar--active" : ""}`
+                `button-navbar ${
+                  isActive ? "button-navbar--active" : ""
+                } ${"toggleButton-section"} ${
+                  document.body.classList.contains("dark-theme")
+                    ? "dark-theme"
+                    : ""
+                }`
               }
               onClick={handleFullPokedex}
             >
@@ -47,7 +61,13 @@ const Navbar = ({
             <NavLink
               to="/Favoritos"
               className={({ isActive }) =>
-                `button-navbar ${isActive ? "button-navbar--active" : ""}`
+                `button-navbar ${
+                  isActive ? "button-navbar--active" : ""
+                } ${"toggleButton-section"} ${
+                  document.body.classList.contains("dark-theme")
+                    ? "dark-theme"
+                    : ""
+                }`
               }
               onClick={handleFavoritosFilter}
             >
@@ -55,7 +75,11 @@ const Navbar = ({
             </NavLink>
           </div>
 
-          <div className="toggleButton-section">
+          <div
+            className={`${"toggleButton-section"} ${
+              document.body.classList.contains("dark-theme") ? "dark-theme" : ""
+            }`}
+          >
             <img
               className={"cherrim-icon"}
               src={"/cherrim-sunshine.png"}
@@ -68,6 +92,14 @@ const Navbar = ({
               alt={"pokémon cherrim overcast version"}
             />
           </div>
+        </div>
+        <div
+          className={`nav_burger ${isOpen ? "open" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </nav>
     </>

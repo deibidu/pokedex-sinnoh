@@ -1,5 +1,39 @@
 @import "../style.css";
 
+/* modo nocturno */
+body.dark-theme .nav {
+  background-color: var(--background-color-dark-mode-navAndCard);
+  border-color: var(--color-light-yellow);
+}
+
+body.dark-theme .pokedex-name {
+  background-color: var(--color-dark-blue-gray-border);
+  border-color: var(--color-light-yellow);
+}
+
+body.dark-theme .toggleButton-section {
+  border-color: var(--color-light-yellow);
+}
+
+body.dark-theme .button-navbar {
+  border-color: var(--color-light-yellow);
+  background-color: var(--color-dark-blue-gray-border);
+}
+
+body.dark-theme .button-navbar:hover {
+  background-color: var(--color-dark-orange);
+  color: var(--color-black);
+}
+
+body.dark-theme .button-navbar--active {
+  background-color: var(--color-dark-orange);
+  color: var(--color-white);
+}
+
+body.dark-theme .nav_burger span {
+  background-color: var(--color-light-yellow);
+}
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -50,10 +84,15 @@
   align-items: center;
   border: solid 3px var(--color-dark-blue-gray-border);
   border-radius: 50px;
+  padding: 4px 16px;
 }
 
 .cherrim-icon {
   width: 40px;
+}
+
+.nav_burger {
+  display: none;
 }
 
 /* buttons */
@@ -70,7 +109,6 @@
 
 .button-navbar:hover {
   background-color: var(--color-orange);
-  color: var(--color-black);
 }
 
 .button-navbar--active {
@@ -97,6 +135,69 @@
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 132px;
+    left: 0;
+    background-color: var(--color-blue-navbar);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: -webkit-fill-available;
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+  }
+
+  body.dark-theme .navbar.open {
+    background-color: var(--background-color-dark-mode-navAndCard);
+  }
+  .navbar.open {
+    transform: translateX(0);
+  }
+  .nav-buttons {
+    flex-direction: column;
+    width: 100vw;
+    gap: 0;
+  }
+
+  .nav_burger {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+  .nav_burger span {
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-white);
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transform-origin: 5px 0;
+    transition: all 0.2s linear;
+  }
+  .nav_burger.open > span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6.5px);
+  }
+  .nav_burger.open > span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav_burger.open > span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 1px);
+  }
+  .toggleButton-section {
+    border: none;
+    border-radius: 0;
+  }
+  .button-navbar {
+    border-radius: 0;
+    border-bottom: solid 3px var(--color-dark-blue-gray-border);
+  }
+
+  body.dark-theme .button-navbar {
+    border-bottom: solid 3px var(--color-light-yellow);
+  }
+}
+
 @media (max-width: 720px) {
   .button-navbar {
     padding: 10px 20px;
@@ -112,11 +213,13 @@
     width: 24px;
     height: 24px;
   }
+  .navbar {
+    top: 124px;
+  }
 }
 
 @media (max-width: 620px) {
   .button-navbar {
-    padding: 10px 15px;
     font-size: 12px;
   }
   .pokedex-name {
@@ -125,15 +228,12 @@
     font-size: 14px;
     font-weight: 600;
   }
+  .navbar {
+    top: 117px;
+  }
   .icon {
     width: 18px;
     height: 18px;
-  }
-  .cherrim-icon {
-    width: 30px;
-  }
-  .nav-buttons {
-    gap: 5px;
   }
 }
 
@@ -142,9 +242,8 @@
     font-size: 12px;
     font-weight: 400;
   }
-
-  .cherrim-icon {
-    display: none;
+  .navbar {
+    top: 110px;
   }
 }
 
@@ -163,5 +262,25 @@
 @media (max-width: 420px) {
   .nav {
     padding: 28px 16px;
+  }
+  .pokedex-name {
+    font-size: 11px;
+  }
+  .button-navbar {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .navbar {
+    top: 103px;
+  }
+}
+
+@media (max-width: 380px) {
+  .pokedex-name {
+    font-size: 10px;
+    padding: 1px 12px;
+  }
+  .navbar {
+    top: 101px;
   }
 }

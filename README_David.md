@@ -26,7 +26,7 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 7.  Di estilo a las cards y su caja padre donde se iban a guardar los pokemon y sus datos en modo bloque y modo lista haciendo que este ultimo sea por el de defecto.
 
-8.  Con la misma lógica del modo noche creé el modo lista y bloque con un boton que cambiaba de iconos que instalé el react-icons y de ahi importaba los iconos.
+8.  Con la misma lógica del modo noche creé el modo lista y bloque con un boton que cambiaba de iconos que instalé el react-icons y de ahi importaba los iconos. A medida que iba avanzando, he ido aplicándolo a los elementos.
 
 9.  Para filtrar los pokemon Favoritos seguí los pasos de mi profesor en sus videos para conseguir filtrarlos y el cambio de color del icono del corazón.
 
@@ -40,13 +40,15 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 12. Para los efectos de css los cogí de estos sitios: para el zoom'https://www.w3schools.com/howto/howto_css_zoom_hover.asp' y el como aparece 'https://angrytools.com/css/animation/'.
 
-13. Paginación He seguido los pasos de 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro' ya que estaba usando la PokeApi de 0. He conseguido que la paginación se cree pero no el que pase a la siguiente página y me lia bastante lo que me falta. También intenté probarlo por medio de este video con la api de material ui con este video, pero no era lo que yo buscaba y aparte me lié un poco más 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'.
+13. Paginación he seguido los pasos de 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro' ya que estaba usando la PokeApi de 0. He conseguido que la paginación se cree pero no el que pase a la siguiente página y me lia bastante lo que me falta. También intenté probarlo por medio de este video con la api de material ui con este video, pero no era lo que yo buscaba y aparte me lié un poco más 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'.
 
-    \*Conflicto: No se pasan los Pokémon de página.
+    \*Conflicto: No se pasan los Pokémon de página y no sé qué le puede faltar.
 
-14. LocalStorage: he seguido los pasos de mi profesor aplicandolo a typescript y react. Me ha costado un poco entender el dónde colocar las cosas la función ya que he ido con prueba y error hasta poder introducirlo. He necesitado la ia para que me diga donde colocar perfectamente el getItem ya que me salía el pokémon pero no se me guardaba al recargarlo. Ya sé como va un LocalStorage.
+14. LocalStorage: he seguido los pasos de mi profesor aplicandolo a typescript y react de aquí 'https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/'. Y como no sabia exactamente lo que eran el JSON.stringly y el .parse investigué aquí 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON'. Me ha costado un poco entender el dónde colocar las cosas la función ya que he ido con prueba y error hasta poder introducirlo. He necesitado la ia para que me diga donde colocar perfectamente el getItem ya que me salía el pokémon pero no se me guardaba al recargarlo. Ya sé como va un LocalStorage (más o menos).
 
-15. Responsive: He creado un responsive para cada modo ya que se puede cambiar de modo el formato de las cards de los Pokémon.
+15. Responsive: He creado un responsive para cada modo ya que se puede cambiar de modo el formato de las cards de los Pokémon. He creado un menú hamburguesa gracias a este tutorial 'https://www.youtube.com/watch?v=qM0Q-w_VeFw&ab_channel=JLuisDev', pero modificando varias cosas acoplandolo al código. he tenido que hacer muchos cambios de diseño al modo lista ya que me da sido un poco tedioso el cómo acoplar los stats.
+
+16. Testing:
 
 CONCLUSIÓN: He aprendido mucho en llamadas a api, el cómo leerlas también. He aprendido las promesas que era algo no entendía en su momento y lo veo bastante útil. Por fin le doy uso a la Consola para ver las cosas que fallan porque en clase no conseguía entenderlo y mientras la función estuviera bien seguía adelante y por fin veo, que ya sé como usarlo y lo importante que es. Ya sé como va los Local Storage, como funcionan y que sintaxis necesita. Sí es verdad que cuando el proyecto crece se hace más lioso el cómo colocarlo, usarlo y qué introducir, por eso es muy importante ser descriptivo y ordenado, cosa que tengo que mejorar.
 

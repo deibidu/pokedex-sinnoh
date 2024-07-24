@@ -1,5 +1,34 @@
 @import "../style.css";
 
+/* modo nocturno */
+body.dark-theme .buttonListBlock {
+  background-color: var(--background-color-dark-mode-navAndCard);
+  border-color: var(--color-light-yellow);
+}
+
+body.dark-theme .buttonListBlock:hover {
+  background-color: var(--color-dark-orange);
+  border-color: var(--color-light-yellow);
+}
+
+body.dark-theme .iconList {
+  color: var(--color-light-yellow);
+}
+
+.iconList {
+  font-size: 24px;
+  color: var(--color-dark-blue);
+}
+
+body.dark-theme .iconBlock {
+  color: var(--color-light-yellow);
+}
+
+.iconBlock {
+  font-size: 25px;
+  color: var(--color-dark-blue);
+}
+
 .buttonListBlockContainer {
   display: flex;
   align-items: center;
