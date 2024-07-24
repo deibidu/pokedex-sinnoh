@@ -6,10 +6,9 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
     Creé las rutas y mis archivos necesarios. Lo primero que hice fue ir a style.css a crear las variables de los colores y algunos patrones que sabia que se iba a
     repetir a lo largo del proyecto (obviamente siempre hay cambios de última hora, pero tenemos la suerte de rectificarlos). Creé el esqueleto del navbar para poder ver si estaba todo bien conectado, por si se renderizaba bien todo.
 
-        *Conflicto: Tuve problemas en el renderizado.
+        \*Conflicto: Tuve problemas en el renderizado.
 
-
-        *Solución: Era porque tenía las imagenes mal importadas. En mi anterior proyecto las teniamos así, pero claro, luego cai que eran iconos importados, asi que lo modifiqué y funcionó.
+        \*Solución: Era porque tenía las imagenes mal importadas. En mi anterior proyecto las teniamos así, pero claro, luego cai que eran iconos importados, asi que lo modifiqué y funcionó.
 
 3.  Una vez teniendo todo bien conectado, me puse a crear los archivos de los enlaces de la Home(Pokedex) y el de Favoritos y di el estilo del Navbar y puse queños detalles como el scroll y el background del body como en mi diseño de Figma.
 
@@ -27,12 +26,13 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 7.  Di estilo a las cards y su caja padre donde se iban a guardar los pokemon y sus datos en modo bloque y modo lista haciendo que este ultimo sea por el de defecto.
 
-8.  Con la misma lógica del modo noche creé el modo lista y bloque con un boton que cambiaba de iconos que instalé el react-icons y de ahi importaba los iconos.
+8.  Con la misma lógica del modo noche creé el modo lista y bloque con un boton que cambiaba de iconos que instalé el react-icons y de ahi importaba los iconos. A medida que iba avanzando, he ido aplicándolo a los elementos.
 
 9.  Para filtrar los pokemon Favoritos seguí los pasos de mi profesor en sus videos para conseguir filtrarlos y el cambio de color del icono del corazón.
 
-    *Conflicto: no sabía como conectar esta función a los botones del navbar. Suponía que era la misma lógica que el de ToggleButtonListBlock, pero me daba miedo que se me duplicara el navbar.
-    *Solución: Por prisas pregunté a chatGPT para ver bien como hacerlo y el porqué para comprenderlo. Efectivamente era asi pero no mi lógica no entendia como no se puede duplicar de nuevo ya que estas poniendo de nuevo en navbar en el return.
+    \*Conflicto: no sabía como conectar esta función a los botones del navbar. Suponía que era la misma lógica que el de ToggleButtonListBlock, pero me daba miedo que se me duplicara el navbar.
+
+    \*Solución: Por prisas pregunté a chatGPT para ver bien como hacerlo y el porqué para comprenderlo. Efectivamente era asi pero no mi lógica no entendia como no se puede duplicar de nuevo ya que estas poniendo de nuevo en navbar en el return.
 
 10. Para el maquetado del container padre de las cards lo cogí de aquí: 'https://www.w3schools.com/css/css_grid.asp' que lo descubrí hace poco y me pareción bastante sencillo.
 
@@ -40,19 +40,23 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 12. Para los efectos de css los cogí de estos sitios: para el zoom'https://www.w3schools.com/howto/howto_css_zoom_hover.asp' y el como aparece 'https://angrytools.com/css/animation/'.
 
-/_ TODO _/
+13. Paginación he seguido los pasos de 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro' ya que estaba usando la PokeApi de 0. He conseguido que la paginación se cree pero no el que pase a la siguiente página y me lia bastante lo que me falta. También intenté probarlo por medio de este video con la api de material ui con este video, pero no era lo que yo buscaba y aparte me lié un poco más 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'.
 
-- Paginación: Tengo un archivo creado para ello con funciones y variables dentro comentados, pero me daba error en enlace para contar los de x pokemon a x pokemon de la api y no me daba tiempo ya, pero me gustaría terminarlo por gusto a la vuelta del viaje. He tenido como referencias para el paginado estos videos:
-  · 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'
-  · 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro'
+    \*Conflicto: No se pasan los Pokémon de página y no sé qué le puede faltar.
 
-- LocalStorage: no lo he podido consultar todavia y es un GRAN TO DO para mí porque me da curiosidad de cómo funciona y que es lo que hace.
+14. LocalStorage: he seguido los pasos de mi profesor aplicandolo a typescript y react de aquí 'https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/'. Y como no sabia exactamente lo que eran el JSON.stringly y el .parse investigué aquí 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON'. Me ha costado un poco entender el dónde colocar las cosas la función ya que he ido con prueba y error hasta poder introducirlo. He necesitado la ia para que me diga donde colocar perfectamente el getItem ya que me salía el pokémon pero no se me guardaba al recargarlo. Ya sé como va un LocalStorage (más o menos).
 
-/_ TODO _/
+15. Responsive: He creado un responsive para cada modo ya que se puede cambiar de modo el formato de las cards de los Pokémon. He creado un menú hamburguesa gracias a este tutorial 'https://www.youtube.com/watch?v=qM0Q-w_VeFw&ab_channel=JLuisDev', pero modificando varias cosas acoplandolo al código. he tenido que hacer muchos cambios de diseño al modo lista ya que me da sido un poco tedioso el cómo acoplar los stats.
 
-13. Responsive. Ya que por tiempo por un viaje que tengo en breves (hoy viernes por la tarde) y un poco de agobio, no he podido hacer bien la Paginación y ni el LocalStorage, he hecho un poco de responsive. Me gustaría pulirlo bien cuando vuelva del viaje.
+16. Testing:
 
-CONCLUSIÓN: He aprendido mucho en llamadas a api, el cómo leerlas también. He aprendido las promesas que era algo no entendía en su momento y lo veo bastante útil. Por fin le doy uso a la Consola para ver las cosas que fallan porque en clase no conseguía entenderlo y mientras la función estuviera bien seguía adelante y por fin veo, que ya sé como usarlo y lo importante que es. La llamada a la Api, para los detalles sobre todo, fue de lo más frustrante para mí porque estaba siguiendo todo al pié de la letra, se montaba bien y la estructura esta bien, pero no funcionaba. Como funcionaba me pasaba a otras cosas cuando mi cabeza no iba a más hasta que comprendí que no podía solucionarlo yo solo porque ni buscando en español o inglés no encontraba lo que quería y tuve que pedir ayuda a mis compañeros que ellos tienen más experiencia con apis y tienen más lógica que yo. Sintaxis: he tenido bastantes problemas de sintaxis ya por mi total falta de experiencia. He tenido que recurrir a chatGPT para que me corrigiera para luego luego copiarlo a mano yo para que se me pueda quedar mejor porque al final he comprendido que esto es hacer, hacer y hacer. Me ha gustado esta temática, pero la informacion de la Pokeapi era bastante irregular y desordenado. una vez más, agradezco que mis compañeros me hayan ayudado porque descubrí tambien que se podia instalar el pokenode y de ahi sacar la informacion en base a typescript, pero era más complejo todavia. Menos mal que me ayudaron.
+CONCLUSIÓN: He aprendido mucho en llamadas a api, el cómo leerlas también. He aprendido las promesas que era algo no entendía en su momento y lo veo bastante útil. Por fin le doy uso a la Consola para ver las cosas que fallan porque en clase no conseguía entenderlo y mientras la función estuviera bien seguía adelante y por fin veo, que ya sé como usarlo y lo importante que es. Ya sé como va los Local Storage, como funcionan y que sintaxis necesita. Sí es verdad que cuando el proyecto crece se hace más lioso el cómo colocarlo, usarlo y qué introducir, por eso es muy importante ser descriptivo y ordenado, cosa que tengo que mejorar.
+
+La llamada a la Api, para los detalles sobre todo, fue de lo más frustrante para mí porque estaba siguiendo todo al pié de la letra, se montaba bien y la estructura esta bien, pero no funcionaba. Como funcionaba me pasaba a otras cosas cuando mi cabeza no iba a más hasta que comprendí que no podía solucionarlo yo solo porque ni buscando en español o inglés no encontraba lo que quería y tuve que pedir ayuda a mis compañeros que ellos tienen más experiencia con apis y tienen más lógica que yo.
+
+Sintaxis: he tenido bastantes problemas de sintaxis ya por mi total falta de experiencia. He tenido que recurrir a chatGPT para que me corrigiera para luego luego copiarlo a mano yo para que se me pueda quedar mejor porque al final he comprendido que esto es hacer, hacer y hacer.
+
+Me ha gustado esta temática, pero la informacion de la Pokeapi era bastante irregular y desordenado. una vez más, agradezco que mis compañeros me hayan ayudado porque descubrí tambien que se podia instalar el pokenode y de ahi sacar la informacion en base a typescript, pero era más complejo todavia. Menos mal que me ayudaron.
 
 Muchas gracias por la oportunidad.
 

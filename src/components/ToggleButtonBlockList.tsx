@@ -2,7 +2,7 @@ import "../utils/models/fetchPokemon.css";
 import "../style.css";
 import "./ToggleButtonBlockList.css";
 import { FaThList } from "react-icons/fa";
-import { TfiLayoutColumn3Alt } from "react-icons/tfi";
+import { PiSquaresFourFill } from "react-icons/pi";
 import { useState } from "react";
 
 type Mode = "list" | "block";
@@ -24,11 +24,16 @@ export const ToggleButtonBlockList = ({
   return (
     <>
       <div className="buttonListBlockContainer">
-        <button className="buttonListBlock" onClick={handleClick}>
+        <button
+          className={`${"buttonListBlock"} ${
+            document.body.classList.contains("dark-theme") ? "dark-theme" : ""
+          }`}
+          onClick={handleClick}
+        >
           {mode === "list" ? (
-            <TfiLayoutColumn3Alt style={{ color: "var(--color-dark-blue)" }} />
+            <PiSquaresFourFill className="iconBlock" />
           ) : (
-            <FaThList style={{ color: "var(--color-dark-blue)" }} />
+            <FaThList className="iconList" />
           )}
         </button>
       </div>

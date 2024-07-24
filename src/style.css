@@ -16,6 +16,7 @@
   --color-dark-orange: #d57826;
   --color-light-yellow: #feeab7;
   --color-red: #ec411b;
+  --color-grey: #96958f;
 }
 
 /* Tema diurno */
@@ -38,6 +39,7 @@
     rgba(48, 55, 69, 1) 50%,
     rgba(110, 121, 145, 1) 100%
   );
+  --background-color-dark-mode-navAndCard: var(--color-grey);
 }
 
 body {
@@ -79,4 +81,8 @@ a:active {
 
 ::-webkit-scrollbar-track {
   background-color: var(--color-dark-blue); /* color de la pista */
+}
+
+body.dark-theme::-webkit-scrollbar-track {
+  background-color: var(--color-dark-blue-gray-border); /* color de la pista */
 }
