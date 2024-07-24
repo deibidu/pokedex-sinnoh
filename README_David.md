@@ -42,13 +42,13 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 13. Paginación he seguido los pasos de 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro' ya que estaba usando la PokeApi de 0. He conseguido que la paginación se cree pero no el que pase a la siguiente página y me lia bastante lo que me falta. También intenté probarlo por medio de este video con la api de material ui con este video, pero no era lo que yo buscaba y aparte me lié un poco más 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'.
 
-    \*Conflicto: No se pasan los Pokémon de página y no sé qué le puede faltar.
+    \*Conflicto: No se pasan los Pokémon de página y no sé qué le puede faltar para que funcione.
 
 14. LocalStorage: he seguido los pasos de mi profesor aplicandolo a typescript y react de aquí 'https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/'. Y como no sabia exactamente lo que eran el JSON.stringly y el .parse investigué aquí 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON'. Me ha costado un poco entender el dónde colocar las cosas la función ya que he ido con prueba y error hasta poder introducirlo. He necesitado la ia para que me diga donde colocar perfectamente el getItem ya que me salía el pokémon pero no se me guardaba al recargarlo. Ya sé como va un LocalStorage (más o menos).
 
 15. Responsive: He creado un responsive para cada modo ya que se puede cambiar de modo el formato de las cards de los Pokémon. He creado un menú hamburguesa gracias a este tutorial 'https://www.youtube.com/watch?v=qM0Q-w_VeFw&ab_channel=JLuisDev', pero modificando varias cosas acoplandolo al código. he tenido que hacer muchos cambios de diseño al modo lista ya que me da sido un poco tedioso el cómo acoplar los stats.
 
-16. Testing:
+16. Testing: lo he intentado pero me lia mucho.
 
 CONCLUSIÓN: He aprendido mucho en llamadas a api, el cómo leerlas también. He aprendido las promesas que era algo no entendía en su momento y lo veo bastante útil. Por fin le doy uso a la Consola para ver las cosas que fallan porque en clase no conseguía entenderlo y mientras la función estuviera bien seguía adelante y por fin veo, que ya sé como usarlo y lo importante que es. Ya sé como va los Local Storage, como funcionan y que sintaxis necesita. Sí es verdad que cuando el proyecto crece se hace más lioso el cómo colocarlo, usarlo y qué introducir, por eso es muy importante ser descriptivo y ordenado, cosa que tengo que mejorar.
 
@@ -57,6 +57,8 @@ La llamada a la Api, para los detalles sobre todo, fue de lo más frustrante par
 Sintaxis: he tenido bastantes problemas de sintaxis ya por mi total falta de experiencia. He tenido que recurrir a chatGPT para que me corrigiera para luego luego copiarlo a mano yo para que se me pueda quedar mejor porque al final he comprendido que esto es hacer, hacer y hacer.
 
 Me ha gustado esta temática, pero la informacion de la Pokeapi era bastante irregular y desordenado. una vez más, agradezco que mis compañeros me hayan ayudado porque descubrí tambien que se podia instalar el pokenode y de ahi sacar la informacion en base a typescript, pero era más complejo todavia. Menos mal que me ayudaron.
+
+Me he liado un poco haciendo el modo nocturno por falta de orden, supongo (y espero), que mejoraré con el tiempo y la experiencia.
 
 Muchas gracias por la oportunidad.
 
