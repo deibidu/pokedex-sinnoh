@@ -47,31 +47,6 @@ body.dark-theme .pkmnName {
   color: var(--color-black);
 }
 
-.pkmnStats {
-  display: flex;
-  flex-direction: wrap;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.pkmnStat {
-  background-color: var(--color-blue-dark-mode-section);
-  gap: 12px;
-  padding: 0 24px;
-  color: var(--color-white);
-  border-radius: 4px 0 0 4px;
-  border: solid 1px var(--color-blue-dark-mode-section);
-}
-
-.pkmnResults {
-  background-color: var(--color-white);
-  color: var(--color-blue-dark-mode-section);
-  padding: 0px 24px;
-  border-radius: 0 4px 4px 0;
-  border: solid 1px var(--color-blue-dark-mode-section);
-}
-
 .iconFav {
   padding: 20px;
 }
@@ -86,6 +61,11 @@ body.dark-theme .pkmnName {
   grid-template-columns: auto auto;
   justify-items: start;
   gap: 10px;
+}
+
+.pkmnStatList-mode,
+.pkmnResultsList-mode {
+  margin: 0px;
 }
 
 /* formato de lista y bloqque */

@@ -121,7 +121,7 @@ export const PokemonList = ({ favoritos = false }) => {
           {pokemonData && pokemonData.length > 0 ? (
             filteredPokemonFav()
               // paginacion de los pokemon
-              .slice((page - 1) * perPage, page * perPage)
+              //.slice((page - 1) * perPage, page * perPage)
               //
               .map((pokemonItem) => (
                 <div
