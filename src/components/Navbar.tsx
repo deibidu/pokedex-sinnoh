@@ -48,7 +48,7 @@ const Navbar = ({
               className={({ isActive }) =>
                 `button-navbar ${
                   isActive ? "button-navbar--active" : ""
-                } ${"toggleButton-section"} ${
+                } ${"button-navbar"} ${
                   document.body.classList.contains("dark-theme")
                     ? "dark-theme"
                     : ""
@@ -63,7 +63,7 @@ const Navbar = ({
               className={({ isActive }) =>
                 `button-navbar ${
                   isActive ? "button-navbar--active" : ""
-                } ${"toggleButton-section"} ${
+                } ${"button-navbar"} ${
                   document.body.classList.contains("dark-theme")
                     ? "dark-theme"
                     : ""
