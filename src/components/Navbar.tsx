@@ -14,6 +14,8 @@ const Navbar = ({
 }) => {
   const { backToHome } = usePagination();
   const [isOpen, setIsOpen] = useState(false);
+
+  const isClose = () => setIsOpen(false);
   return (
     <>
       <nav
@@ -52,9 +54,13 @@ const Navbar = ({
                   document.body.classList.contains("dark-theme")
                     ? "dark-theme"
                     : ""
-                }`
+                }
+               `
               }
-              onClick={handleFullPokedex}
+              onClick={() => {
+                handleFullPokedex();
+                isClose();
+              }}
             >
               Pokédex
             </NavLink>
@@ -69,7 +75,10 @@ const Navbar = ({
                     : ""
                 }`
               }
-              onClick={handleFavoritosFilter}
+              onClick={() => {
+                handleFavoritosFilter();
+                isClose();
+              }}
             >
               Favoritos
             </NavLink>
