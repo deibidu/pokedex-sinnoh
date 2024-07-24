@@ -8,6 +8,7 @@ import { FaHeart } from "react-icons/fa6";
 import Navbar from "../components/Navbar";
 import { Pagination } from "../components/Pagination";
 import { usePagination } from "../components/usePagination";
+import Spinner from "./models/Spinner";
 
 // Raíz base de la llamada a la API
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
@@ -106,7 +107,14 @@ export const PokemonList = ({ favoritos = false }) => {
 
   // La carga de todo
   if (loading) {
-    return <>Loading Pokemon...</>;
+    return (
+      <>
+        <div className="LoadingPokemon">
+          <Spinner />
+          <p>Loading Pokemon...</p>
+        </div>
+      </>
+    );
   }
 
   return (

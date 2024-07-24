@@ -68,6 +68,15 @@ body.dark-theme .pkmnName {
   margin: 0px;
 }
 
+.LoadingPokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+}
+
 /* formato de lista y bloqque */
 
 .wrapList-mode {
