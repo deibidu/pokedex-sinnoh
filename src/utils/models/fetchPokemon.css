@@ -17,6 +17,11 @@ body.dark-theme .pkmnName {
   color: var(--color-white);
 }
 
+body.dark-theme .iconFav {
+  padding: 12px;
+  filter: brightness(1.3);
+}
+
 .pkmnImage {
   height: 90px;
   width: 90px;
