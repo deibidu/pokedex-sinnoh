@@ -48,13 +48,15 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 15. Responsive: He creado un responsive para cada modo ya que se puede cambiar de modo el formato de las cards de los Pokémon. He creado un menú hamburguesa gracias a este tutorial 'https://www.youtube.com/watch?v=qM0Q-w_VeFw&ab_channel=JLuisDev', pero modificando varias cosas acoplandolo al código. he tenido que hacer muchos cambios de diseño al modo lista ya que me da sido un poco tedioso el cómo acoplar los stats.
 
-16. Testing: lo he intentado pero me lia mucho.
+16. Testing: lo he intentado pero me lia mucho. Voy a empaparme de más blogs y videos porque sé que es importante para el uso en la práctica.
 
 CONCLUSIÓN: He aprendido mucho en llamadas a api, el cómo leerlas también. He aprendido las promesas que era algo no entendía en su momento y lo veo bastante útil. Por fin le doy uso a la Consola para ver las cosas que fallan porque en clase no conseguía entenderlo y mientras la función estuviera bien seguía adelante y por fin veo, que ya sé como usarlo y lo importante que es. Ya sé como va los Local Storage, como funcionan y que sintaxis necesita. Sí es verdad que cuando el proyecto crece se hace más lioso el cómo colocarlo, usarlo y qué introducir, por eso es muy importante ser descriptivo y ordenado, cosa que tengo que mejorar.
 
 La llamada a la Api, para los detalles sobre todo, fue de lo más frustrante para mí porque estaba siguiendo todo al pié de la letra, se montaba bien y la estructura esta bien, pero no funcionaba. Como funcionaba me pasaba a otras cosas cuando mi cabeza no iba a más hasta que comprendí que no podía solucionarlo yo solo porque ni buscando en español o inglés no encontraba lo que quería y tuve que pedir ayuda a mis compañeros que ellos tienen más experiencia con apis y tienen más lógica que yo.
 
-Sintaxis: he tenido bastantes problemas de sintaxis ya por mi total falta de experiencia. He tenido que recurrir a chatGPT para que me corrigiera para luego luego copiarlo a mano yo para que se me pueda quedar mejor porque al final he comprendido que esto es hacer, hacer y hacer.
+Sintaxis: he tenido bastantes problemas de sintaxis ya por mi total falta de experiencia. He tenido que recurrir a chatGPT para que me corrigiera para luego aplicarlo a mano para que se me pueda quedar mejor porque al final he comprendido que esto es hacer, hacer y hacer.
+
+El paginado me ha frustrado bastante porque tampoco he podido solucionarlo y me da impotencias ya que me gusta mucho la aplicación y su utilidad como fan de pokémon que soy, sobre todo por esta región que fue la que jugué de pequeño. Intentaré acabarla fuera del plazo porque tengo las espina clavada.
 
 Me ha gustado esta temática, pero la informacion de la Pokeapi era bastante irregular y desordenado. una vez más, agradezco que mis compañeros me hayan ayudado porque descubrí tambien que se podia instalar el pokenode y de ahi sacar la informacion en base a typescript, pero era más complejo todavia. Menos mal que me ayudaron.
 
