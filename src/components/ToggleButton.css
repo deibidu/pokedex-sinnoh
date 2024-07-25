@@ -1,6 +1,23 @@
 @import "../style.css";
 
 /* clases para el toggle button del modo noche */
+body.dark-theme .slider {
+  border: solid 3px var(--color-light-yellow);
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-orange);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: solid 3px var(--color-dark-blue-gray-border);
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -14,23 +31,11 @@
   height: 0;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--color-orange);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 19px;
+  width: 19px;
   left: 4px;
   bottom: 4px;
   background-color: var(--color-white);
@@ -69,9 +74,5 @@ input:checked + .slider:before {
   body.dark-theme .slider {
     border: solid 3px var(--color-light-yellow);
     background-color: var(--color-dark-blue-gray-border);
-  }
-  .slider:before {
-    height: 19px;
-    width: 19px;
   }
 }

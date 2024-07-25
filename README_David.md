@@ -40,7 +40,7 @@ Hola soy David López y os voy a repasar mi recorrido en este proyecto punto por
 
 12. Para los efectos de css los cogí de estos sitios: para el zoom'https://www.w3schools.com/howto/howto_css_zoom_hover.asp' y el como aparece 'https://angrytools.com/css/animation/'.
 
-13. Paginación he seguido los pasos de 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro' ya que estaba usando la PokeApi de 0. He conseguido que la paginación se cree pero no el que pase a la siguiente página y me lia bastante lo que me falta. También intenté probarlo por medio de este video con la api de material ui con este video, pero no era lo que yo buscaba y aparte me lié un poco más 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'.
+13. Paginación he seguido los pasos de 'https://www.youtube.com/watch?v=XNEhQiIAzOo&t=905s&ab_channel=Mauro' ya que estaba usando la PokeApi de 0. He conseguido que la paginación se cree pero no el que pase a la siguiente página y me lia bastante lo que me falta. También intenté probarlo por medio de este video con la api de material ui con este video, pero no era lo que yo buscaba y aparte me lié un poco más 'https://www.youtube.com/watch?v=SNSzN7dT_zA&ab_channel=codrr'. He comentado el límite del paginado dejando el componente de paginado para ver que esta el componente hecho y asi también para poder usar la aplicación más a gusto sin limitaciones por el momento. Se puede ver sus funcionalidades en sus archivos correspondientes.
 
     \*Conflicto: No se pasan los Pokémon de página y no sé qué le puede faltar para que funcione.
 
