@@ -45,6 +45,9 @@ body.dark-theme .nav_burger span {
   background-color: var(--color-blue-navbar);
   padding: 30px 20px;
   border-bottom: solid 3px var(--color-dark-blue-gray-border);
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .pokedex-name {
@@ -137,6 +140,11 @@ body.dark-theme .nav_burger span {
 }
 
 @media (max-width: 768px) {
+  /* modo noche */
+  body.dark-theme .toggleButton-section {
+    background-color: var(--background-color-dark-mode-navAndCard);
+  }
+
   .navbar {
     position: absolute;
     top: 132px;
@@ -185,10 +193,12 @@ body.dark-theme .nav_burger span {
     transform: rotate(-45deg) translate(-5px, 1px);
   }
   .toggleButton-section {
+    padding: 24px 0;
     border: 0;
     border-bottom: solid 3px;
     border-radius: 0;
     border-bottom-color: var(--color-dark-blue-gray-border);
+    background-color: var(--color-blue-navbar);
     justify-content: space-between;
     width: 100%;
   }
