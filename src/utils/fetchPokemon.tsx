@@ -7,7 +7,6 @@ import { ToggleButtonBlockList } from "../components/ToggleButtonBlockList";
 import { FaHeart } from "react-icons/fa6";
 import Navbar from "../components/Navbar";
 import { Pagination } from "../components/Pagination";
-import { usePagination } from "../components/usePagination";
 import Spinner from "./models/Spinner";
 
 // Raíz base de la llamada a la API
@@ -21,8 +20,9 @@ export const PokemonList = ({ favoritos = false }) => {
   >([]);
   const [loading, setLoading] = useState(true);
   const [mode, setMode] = useState<"list" | "block">("list");
-  const { page, nextPage, prevPage } = usePagination();
+  const [totalItems, setTotalItems] = useState(0); // Agregamos este estado
   const perPage = 12;
+  const [page, setPage] = useState(1); // Agregamos este estado
 
   // Hace la promesa
   useEffect(() => {
@@ -58,6 +58,7 @@ export const PokemonList = ({ favoritos = false }) => {
         }));
 
         setPokemonData(dataPokemonFavsSaved);
+        setTotalItems(dataPokemonFavsSaved.length); // Actualizamos el estado totalItems
         setLoading(false);
       } catch (error) {
         console.error("Error fetching Pokémon data:", error);
@@ -67,6 +68,10 @@ export const PokemonList = ({ favoritos = false }) => {
 
     fetchData();
   }, []);
+
+  const handleChangePage = (newPage: number) => {
+    setPage(newPage);
+  };
 
   // Función del cambio de formato lista a columna/bloque y viceversa
   const handleChangeMode = (newMode: "list" | "block") => {
@@ -129,7 +134,7 @@ export const PokemonList = ({ favoritos = false }) => {
           {pokemonData && pokemonData.length > 0 ? (
             filteredPokemonFav()
               // paginacion de los pokemon
-              //.slice((page - 1) * perPage, page * perPage)
+              .slice((page - 1) * perPage, page * perPage)
               //
               .map((pokemonItem) => (
                 <div
@@ -147,7 +152,8 @@ export const PokemonList = ({ favoritos = false }) => {
                       mode === "list" ? "pkball-icon" : "pkball-icon-off"
                     }
                     src={"/pokeball-icon.svg"}
-                  ></img>
+                    alt="Pokeball Icon"
+                  />
                   <img
                     className={
                       mode === "list" ? "pkmnImage" : "pkmnImageBlock-mode"
@@ -309,9 +315,8 @@ export const PokemonList = ({ favoritos = false }) => {
                   <div className="iconFav">
                     <i>
                       <FaHeart
-                        onClick={() => {
-                          handlePokemonFav(pokemonItem.id);
-                        }}
+                        className={pokemonItem.isFav ? "heart-fav" : "heart"}
+                        onClick={() => handlePokemonFav(pokemonItem.id)}
                         style={{
                           color: pokemonItem.isFav
                             ? "var(--color-red)"
@@ -324,17 +329,17 @@ export const PokemonList = ({ favoritos = false }) => {
                 </div>
               ))
           ) : (
-            <p>No Pokemon data available</p>
+            <p>No hay Pokémon que mostrar</p>
           )}
         </div>
-      </div>
-      <div>
         <Pagination
           page={page}
+          nextPage={() => handleChangePage(page + 1)}
+          prevPage={() => handleChangePage(page - 1)}
+          onChangePage={handleChangePage}
+          changePage={handleChangePage}
+          totalItems={totalItems}
           perPage={perPage}
-          nextPage={nextPage}
-          prevPage={prevPage}
-          maxItems={pokemonData?.length}
         />
       </div>
     </>
