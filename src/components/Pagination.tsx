@@ -1,21 +1,30 @@
 import "./Pagination.css";
 
 interface Props {
-  perPage: number;
   page: number;
   nextPage: () => void;
   prevPage: () => void;
-  maxItems: number;
+  onChangePage: (newPage: number) => void;
+  totalItems: number;
+  perPage: number;
+  changePage: (newPage: number) => void;
 }
 
 export const Pagination = ({
-  perPage,
   page,
   nextPage,
   prevPage,
-  maxItems,
+  onChangePage,
+  totalItems,
+  perPage,
+  changePage,
 }: Props) => {
-  const lastPage = Math.ceil(maxItems / perPage);
+  const lastPage = Math.max(1, Math.ceil(totalItems / perPage)); // Garantizamos que la última página sea al menos 1
+
+  const handlePageChange = (newPage: number) => {
+    onChangePage(newPage);
+    changePage(newPage); // Actualizo el estado de la página
+  };
 
   return (
     <>
@@ -23,7 +32,10 @@ export const Pagination = ({
         <button
           className="paginationButton"
           disabled={page === 1}
-          onClick={prevPage}
+          onClick={() => {
+            prevPage();
+            handlePageChange(page - 1);
+          }}
         >
           &lt;
         </button>
@@ -31,7 +43,10 @@ export const Pagination = ({
         <button
           className="paginationButton"
           disabled={page === lastPage}
-          onClick={nextPage}
+          onClick={() => {
+            nextPage();
+            handlePageChange(page + 1);
+          }}
         >
           &gt;
         </button>

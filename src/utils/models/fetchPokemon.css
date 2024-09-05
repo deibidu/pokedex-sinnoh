@@ -147,6 +147,7 @@ body.dark-theme .iconFav {
 }
 
 .cardItemBlock-mode {
+  margin-top: 5px;
   padding: 40px 24px;
   gap: 10px;
   background-color: var(--color-light-yellow);
